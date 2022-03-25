@@ -1,0 +1,162 @@
+@media (max-width: 768px) {
+    .blog-title-height {
+        min-height: 60px !important;
+    }
+    .description-row {
+        min-height: 80px !important;
+    }
+    .package-name-row {
+        min-height: 90px !important;
+    }
+    .mobile-text-center {
+        text-align: center!important;
+    }
+    .mobile-h2-font {
+        font-size: 20px !important;
+    }
+    .mobile-h3-font {
+        font-size: 17px !important;
+
+    }
+    .mobile-h6-font {
+        font-size: 15px !important;
+
+    }
+    .button-test {
+        font-size: 10px !important;
+        height: 42px !important;
+        line-height: 15px !important;
+
+    }
+    .mobile-share-button{
+        margin-right: 200px !important;
+    }
+    .pl-sm--8 {
+        padding-left: 8px !important;
+    }
+    .buy-button {
+        font-size: 13px !important;
+        width: 85px !important;
+        height: 40px !important;
+        padding: 2px !important;
+    }
+
+    .watch-button {
+        font-size: 13px !important;
+        width: 100px !important;
+        height: 45px !important;
+        padding: 5px !important;
+
+    }
+    .available-button {
+        font-size: 13px !important;
+        width: 75px !important;
+        height: 60px !important;
+        padding: 5px !important;
+
+    }
+
+    container { display: flex; flex-flow: column; }
+    .question-div-row { order: 2 }
+    .timer-div { order: 1 }
+
+    .mobile-content-center {
+        justify-content: center !important;
+    }
+    .feature-card {
+        overflow-x: scroll;
+        white-space: nowrap;
+    }
+    .card-scroll {
+        display: flex;
+        flex-wrap: nowrap !important;
+        overflow: auto !important;
+    }
+
+    .m-mt-0 {
+        margin-top: 0!important;
+    }
+    .m-float-none {
+        float: none!important;
+    }
+    .m-m-auto {
+        margin: auto!important;
+    }
+    .m-p-0 {
+        padding: 0!important;
+    }
+    .m-d-none {
+        display: none!important;
+    }
+    .m-d-flex {
+        display: flex !important;
+    }
+    .m-d-block {
+        display: block !important;
+    }
+    .m-pb-0 {
+        padding-bottom: 0 !important;
+    }
+    .m-w-100 {
+        width: 100px !important;
+    }
+    .m-pt-0 {
+        padding-top: 0 !important;
+    }
+    .m-w-512 {
+        width: 512px !important;
+    }
+    .m-border-radius {
+        border-radius: 10px !important;
+    }
+    .dropdown-menu {
+        width: 100%;
+    }
+
+    .m-btn {
+        height: 50px;
+        width: 75%;
+        margin: auto;
+    }
+
+    .desktop-view {
+        display: none!important;
+    }
+    .mobile-view {
+        display: flex!important;
+    }
+    .d-contents {
+        display: contents !important;
+    }
+}
+
+@media (max-width: 766px) {
+    .mobile-banner {
+        background:url('/web/images/pscmitr-signup.jpg')!important;
+        background-size: cover !important;
+    }
+}
+@media (max-width: 575px) {
+    .header-btn {
+        display: none !important;
+    }
+    .vid {
+        height: 200px !important;
+    }
+}
+
+@media (max-width: 990px) {
+    .d-none-990 {
+        display: none !important;
+    }
+
+
+}
+
+@media (min-width: 766px) {
+    .min-w-10 {
+        width: 10% !important;
+    }
+}
+
+

@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>iMathEQ | Online Mathematics Equation Editor</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="icon" href="icons/favicon.ico">
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+<script type='text/javascript' charset = "utf-8" src='//www.imatheq.com/imatheq/com/imatheq/scripts/imatheqfunctions.js'></script>
+<script type="text/javascript" charset = "utf-8" >
+  var editor;
+  // var lskey = "nVNTDV20B%2bo4arm652ZfAh8HwwAVqeuFGcbn5rmZlDBi4Gc%2b4WXBnagqz6%2fty9IX";
+  var lskey = "THUBVmz9INiJagah1DbptAt%2f5AB5KtxK5qTqQekBs1YRRf7DUbZB17jcQq9LuLqV";
+
+  window.onload=function () {
+	  editor = org.imatheq.formulaeditor.createEditor(document.getElementById('myEditor'),
+			  lskey, "EN",
+			  null/*width*/, null/*height*/,
+			  null/*fontName*/, null/*fontSize*/, null/*mobileFontSize*/);
+  }
+
+  function getMathML()
+  {
+  	var mathml = editor.getMathML();
+
+    try {
+        window.opener.ShowMathMLResult(mathml);	//obj.innerHTML);
+    }
+    catch (err) {}
+    window.close();
+    return false;
+
+  }
+
+  function getImage()
+  {
+  	var imagedata = editor.getImage();
+    try {
+        window.opener.ShowImageResult(imagedata);
+    }
+    catch (err) {}
+  }
+
+  function getSVGByAPI()
+  {
+	var mathml = editor.getMathML();
+	mathml = mathml.replace(/\"/g, "'");
+	$.ajax({
+		url: "//www.imatheq.com//imatheqapis/mml2svg",
+		type: "get",
+		dataType: "text",	//receiving data
+		data: {
+		  mml: mathml,
+		  lsk: lskey
+		},
+		contentType: 'application/json',	//sending data
+		success: function (svgdata) {
+			try {
+				window.opener.ShowSvgResult(svgdata);
+			}
+			catch (err) {}
+			window.close();
+			return false;
+
+		},
+		error:function(data,status,er) {
+			alert("error: "+data+" status: "+status+" er:"+er);
+		}
+	});
+  }
+
+  function setMathML(mml)
+  {
+  	if(mml != "") {
+  		if(editor.setMathML) {
+  			editor.setMathML(mml);
+  		} else {
+  			window.setTimeout(setMathML(mml), 200);
+  		}
+  	}
+  }
+
+</script>
+</head>
+<body>
+	<div id="myEditor" class="imatheqvisibletextarea"></div>
+	<input type="button" onclick="javascript:getMathML()" value=Save>
+	<input type="button" onclick="javascript:getImage()" value=SaveImage>
+	<input type="button" onclick="javascript:getSVGByAPI()" value=SaveSVGByAPI>
+</body>
+</html>

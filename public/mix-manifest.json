@@ -1,0 +1,14 @@
+{
+    "/admin/js/scripts.js": "/admin/js/scripts.js",
+    "/admin/js/ckeditor.js": "/admin/js/ckeditor.js",
+    "/admin/css/site.css": "/admin/css/site.css",
+    "/admin/css/bootstrap-extend.css": "/admin/css/bootstrap-extend.css",
+    "/admin/css/bootstrap.css": "/admin/css/bootstrap.css",
+    "/admin/images/.gitkeep": "/admin/images/.gitkeep",
+    "/admin/images/apple-touch-icon.png": "/admin/images/apple-touch-icon.png",
+    "/admin/images/favicon.ico": "/admin/images/favicon.ico",
+    "/admin/images/logo-blue.png": "/admin/images/logo-blue.png",
+    "/admin/images/logo-blue@2x.png": "/admin/images/logo-blue@2x.png",
+    "/admin/images/logo.png": "/admin/images/logo.png",
+    "/admin/images/logo@2x.png": "/admin/images/logo@2x.png"
+}

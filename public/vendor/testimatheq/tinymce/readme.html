@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>iMathEQ plugin for TinyMCE - Link Your Client Page with iMathEQ Mathematics Equation Editor</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="keywords" content="iMathEQ, mathematics, tools, formula editor, equation editor, 
+  education, mathematics expression, iMathEQ editor, math formulas, math editor, html math editor, 
+  mathematics and science symbols, math symbols, online math editor, MATHML, graphical representation."/>
+  <!--favicon-->
+<!--link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="img/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="img/manifest.json">
+<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5"-->
+<link rel="icon" href="img/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="img/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--favicon-->
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <link rel="stylesheet" href="css/corpsite.css">
+<!-- Google Analytics -->
+<style>
+ol {
+    counter-reset: item;
+}
+
+ol > li {
+    counter-increment: item;
+}
+
+ol ol > li {
+    display: block;
+}
+
+ol ol > li:not(.no_number):before {
+    content: counters(item, ".") ". ";
+    margin-left: -20px;
+}
+.no_number {
+	font-style: italic;
+	font-family: "Ubuntu Mono";
+	color: "#212F3C";
+}
+code {
+    font-family: monospace,serif;
+    font-size: 1.2em;
+	color: black;
+	background-color: white
+}
+
+</style>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-81271057-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" 
+			data-target="#myNavbar">
+		<span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>     
+      </button>
+	  <a class="navbar-brand" href="http://www.imatheq.com/corpsite/index.html">
+		<!--img class="hidden-xs" src="img/Small-transparent-cop-name-w-logo2.png" alt=""-->
+		<img class="hidden-xs" src="img/46heightl-transparent-cop-name-w-logo2.png" alt="">
+		<img class="visible-xs" src="img/46heightl-transparent-cop-name-w-logo2.png" alt="">    
+	  </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-center">
+		<li><a href="http://www.imatheq.com/corpsite/index.html#products_link">Products</a></li>
+		<li><a href="javascript:window.open(
+		  'http://www.imatheq.com/imatheq/com/imatheq/math-equation-editor.html',
+		  '_blank');">Demo</a></li>
+		<li class="active"><a href="#">Support</a></li>
+		<li><a href="http://www.imatheq.com/corpsite/index.html#contact_link">Contact</a></li>
+        <li><a href="#">En</a></li>
+        <li><a href="http://www.imatheq.com/corpsite/client_integration_zh_cn.html">中文</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  <div class="container" id="contact_link">
+  	<div class="row" style="padding-left:15px;padding-right:15px;">
+	<div class="col-sm-12">
+	<ul  class="nav nav-tabs">
+		<li><a href="http://www.imatheq.com/corpsite/client_integration.html">Create a Popup Editor</a></li>
+		<li><a href="http://www.imatheq.com/corpsite/server_installation.html">Server Installation</a></li>
+        <li class="active"><a href="#">Plugin for TinyMCE</a></li>
+        <li><a href="http://www.imatheq.com/corpsite/browsers.html">Supported browsers</a></li>
+	</ul>
+	</div>
+	</div>
+  	<div class="row" style="padding-left:15px;padding-right:15px;">
+	<div class="col-sm-12"><h2>Plugin for TinyMCE</h2></div>
+	<h3>Requirements</h3>
+<p>
+<ol>
+  <li>TinyMCE 4.0 or higher installed.</li>
+  <li>A valid iMathEQ license. Purchase a license or email to support@imatheq.com to request trial license</li>
+</ol>
+<h3>Request plugin</h3>	
+<p>Email support@iMathEQ.com to request plugin.</p>
+
+<h3>Integration</h3>
+<ol>
+  <li>Add iMathEQ plugin to TinyMCE editor
+    <ol>
+	  <br>
+	  <li>
+		After unzip, copy tinymce-plugin/imatheq folder to TinyMCE's plugin folder in your server
+		<br>
+  	  </li>
+	  <br>
+	  <li>
+		In the HTML file with TinyMCE editor, in the "init" function, add "imatheq" to plugin list and toolbar, set paste_data_images to "true" and add "img[imatheq-mml]" to extended_valid_elements list,  like:
+		<br>
+		<code class="code_js">
+			<br>
+				plugins: [
+					'[other plugins] imatheq'
+				],
+				<br>toolbar: '[other toolbar buttons] | imatheq',
+				<br>paste_data_images: true,
+				<br>extended_valid_elements : "img[[other attributes]|imatheq-mml]",
+			<br>
+		</code>
+		<br>
+  	  </li>
+	</ol>
+  </li>
+  <li>
+  	Configure iMathEQ plugin according to your needs, "【your TinyMCE folder】\plugins\imatheq\conf\configuration.js":
+    <ol>
+	  <br>
+	  <li>
+  		_imatheq_conf_modal_window	 
+        <ol>
+      		<br>
+			<li class="no_number">
+      			true (default) - show editor as DIV layer
+      		</li>
+      		<li class="no_number">
+      			false - show as popup
+      		</li>
+      	</ol>
+  	  </li>
+	  <br>
+	  <li>
+  		_imatheq_conf_default_modal_win (Only applicable when _imatheq_conf_modal_window = true and not mobile browser)
+        <ol>
+      		<br>
+      		<li class="no_number">
+      			"restored" (default) - by default launch iMathEQ editor as restored window
+      		</li>
+      		<li class="no_number">
+      			"maximized" - by default launch iMathEQ editor as maximized window
+      		</li>
+      	</ol>
+  	  </li>
+	  <br>
+	  <li>
+  		_imatheq_conf_new_tab (Only applicable when _imatheq_conf_modal_window = false and not mobile browser)
+        <ol>
+      		<br>
+      		<li class="no_number">
+      			false (default) - show editor as popup window
+      		</li>
+      		<li class="no_number">
+      			false - show editor as a new browser tab
+      		</li>
+      	</ol>
+  	  </li>
+	  <br>
+	  <li>
+  		_iamtheq_popup_atttributes - Set the properties of popup window
+        <ol>
+      		<br>
+      		<li class="no_number">
+      			menu bar: 1(default) - show menubar, 0 - hide menubar
+      		</li>
+      		<li class="no_number">
+      			resizable - 1(default) - allow user to resize popup window, 0 - not allow user to resize popup window 
+      		</li>
+      		<li class="no_number">
+      			width - width of the popup window, default 800px 
+      		</li>
+      		<li class="no_number">
+      			height - height of the popup window, default 600px 
+      		</li>
+      	</ol>
+  	  </li>
+	  <br>
+	  <li>
+  		_imatheq_conf_image_format - Decide whether save iMathEQ equation image as base64 string or PNG image file
+        <ol>
+      		<br>
+      		<li class="no_number">
+      			base64 (default) - save iMathEQ equation image as base64 string
+      		</li>
+      		<li class="no_number">
+      			png - save iMathEQ equation image as PNG image file
+      		</li>
+      	</ol>
+  	  </li>
+	  <br>
+	  <li>
+  		_imatheq_conf_save_image_api - The URL of server API to save equation image (only applicable when _imatheq_conf_image_format="png")
+  	  </li>
+	  <br>
+	  <li>
+  		_imatheq_conf_image_url_type - Decide the type of equation image URL (only applicable when _imatheq_conf_image_format="png"): direct image URL or API call 
+        <ol>
+      		<br>
+      		<li class="no_number">
+      			image_path (default) - the equation image in HTML page will look like, &lt;img src="..../[equation ID].png"&gt;
+      		</li>
+      		<li class="no_number">
+      			api - the equation image in HTML page will look like, &lt;img src="..../getequationimage.asp?iMathEQ_qid=[equation ID]"&gt;
+      		</li>
+      	</ol>
+  	  </li>
+	  <br>
+	  <li>
+  		_imatheq_conf_image_url - The URL of equation image or API (only applicable when _imatheq_conf_image_format="png")
+        <ol>
+      		<br>
+      		<li class="no_number">
+      			_imatheq_conf_image_url_type="image_path" - the path of equation image without filename
+      		</li>
+      		<li class="no_number">
+      			_imatheq_conf_image_url_type="api - the path of API to fetch equation image
+      		</li>
+      	</ol>
+  	  </li>
+    </ol>
+  </li>
+</ol>
+
+<h3>Test sample codes</h3>	
+<ol>
+  <li>Copy "tinymce-plugin\tinymce.html", "tinymce-plugin\tinymce_inline.html", css and img folders to your web site</li>
+  <br>
+  <li>Update all the javascript file paths to point to the files in your server, like
+		<br>
+		<code class="code_js">
+			<br>
+			&lt;script src="[your TinyMCE folder]/tinymce.min.js/"&gt;<br>
+		</code>
+  </li>
+  <br>
+  <li>Launch a browser and browse to one of the html page</li>
+  <br>
+  <li>To launch iMathEQ Equation Editor
+         <ol>
+      		<br>
+			<li>
+      			Put cursor where you want to insert math equation. Click <img src="img/ckeditor_plugin_documentation.png"> button to launch iMathEQ Math Equation Editor
+    		</li>
+			<br>
+      		<li>
+      			Or double-click an existing math equation to launch iMathEQ Math Equation Editor
+      		</li>
+			<br>
+      		<li>
+      			Or select an math equation then click <img src="img/ckeditor_plugin_documentation.png"> button to launch iMathEQ Math Equation Editor
+      		</li>
+      	</ol>
+  </li>
+</ol>
+<br/>
+<br/>
+</body>
+</html>

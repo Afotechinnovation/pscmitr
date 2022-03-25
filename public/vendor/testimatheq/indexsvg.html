@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>iMathEQ - Mathematics Equation Editor</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="keywords" content="iMathEQ, mathematics, tools, formula editor, equation editor, 
+  education, mathematics expression, iMathEQ editor, math formulas, math editor, html math editor, 
+  mathematics and science symbols, math symbols, online math editor, MATHML, graphical representation."/>
+  <META NAME="Description" CONTENT="iMathEQ is a mathematics equation or formula editor. 
+  It is a WYSIWYG online equation/formula editor. 
+  It allows users to input, edit, print math equation or expressions. Provide interface for easy 
+  integration with web site or mobile app at affordable price. It adds mathematics 
+  formula/equation/expression based communication, chatting, publishing, ect., functions to a web 
+  site or mobile app. It support a rich set of mathematics and science symbols. It supports popular 
+  browsers and platforms including Android and iOS." />
+<link rel="alternate" hreflang="zh-hans" href="http://www.imatheq.com/corpsite/index_zh_cn.html" />
+  <!--favicon-->
+<!--link rel="apple-touch-icon" sizes="57x57" href="img/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="img/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="img/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="img/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="img/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="img/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="img/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="img/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="img/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="img/manifest.json">
+<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5"-->
+<link rel="icon" href="img/favicon.ico">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="msapplication-TileImage" content="img/mstile-144x144.png">
+<meta name="theme-color" content="#ffffff">
+  <!--favicon-->
+
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script type="text/javascript">
+  var lang ="EN";
+  var cartId = "null";
+  var userId = "null";
+  </script>
+  <script src="js/cart.js"></script>
+  <link rel="stylesheet" href="css/corpsite.css">
+<!-- Google Analytics -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-81271057-1', 'auto');
+  ga('send', 'pageview');
+
+  
+  function ShowMathMLResult(result) {
+	    alert(result);
+	}
+  
+  function ShowImageResult(imagedata) 
+  {
+  	var img = new Image();
+  	img.src = imagedata;
+  	var btn = document.getElementById("savebtn");
+  	btn.parentNode.appendChild(img);
+  }
+
+  function ShowSvgResult(svgdata) 
+  {
+	var obj = document.createElement("div");
+	obj.innerHTML = svgdata;
+  	var btn = document.getElementById("savebtn");
+	btn.parentNode.appendChild(obj);
+	btn.parentNode.style.display="block";
+  }
+  
+  var winHandle = null;
+  function launchEQ() {
+	  if(winHandle === undefined || winHandle === null || winHandle.closed) {
+	  	winHandle = window.open(
+			  'editorsvg.html',
+			  'targetWindow', 'menubar=1,resizable=1,width=800,height=600'
+		);
+	  }
+  }
+
+  function updateEQ() {
+	  if(winHandle === undefined || winHandle === null || winHandle.closed) {
+	  	winHandle = window.open(
+			  'editorsvg.html',
+			  'targetWindow', 'menubar=1,resizable=1,width=800,height=600'
+		);
+	  }
+      if(!winHandle.setMathML) {
+          setTimeout(updateEQ,1000);
+      } else { winHandle.setMathML("<math><msup><mi mathcolor=\"#ff0000\">tanh</mi><mrow><mo mathcolor=\"#ff0000\">-</mo><mn mathcolor=\"#ff0000\">1</mn></mrow></msup><mfenced mathcolor=\"#ff0000\"><mrow><mi mathcolor=\"#ff0000\">x</mi></mrow></mfenced>"+
+    	  "<msub><mi mathcolor=\"#ff0000\">log</mi><mi mathcolor=\"#ff0000\">a</mi></msub><mfenced mathcolor=\"#ff0000\"><mrow><mi mathcolor=\"#ff0000\">b</mi></mrow></mfenced>" +
+    	  "<mfrac mathcolor=\"#ff0000\"><mi mathcolor=\"#ff0000\">a</mi><mi mathcolor=\"#ff0000\">b</mi></mfrac></math>"
+      ); }
+  }
+
+</script>
+</head>
+<body>
+	<button id="savebtn" type="button" class="btn btn-primary" onclick="javascript:launchEQ();">Launch Editor</button><br><br><br>
+	
+	<button type="button" class="btn btn-primary" onclick="javascript:updateEQ()">Update</button><br><br><br>
+	
+</body>
+</html>

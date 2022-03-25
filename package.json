@@ -1,0 +1,35 @@
+{
+    "private": true,
+    "scripts": {
+        "dev": "npm run development",
+        "development": "mix",
+        "watch": "mix watch",
+        "watch-poll": "mix watch -- --watch-options-poll=1000",
+        "hot": "mix watch --hot",
+        "prod": "npm run production",
+        "production": "mix --production"
+    },
+    "devDependencies": {
+        "@ckeditor/ckeditor5-alignment": "^31.0.0",
+        "@ckeditor/ckeditor5-basic-styles": "^31.0.0",
+        "@ckeditor/ckeditor5-editor-classic": "^31.0.0",
+        "@ckeditor/ckeditor5-essentials": "^31.0.0",
+        "@ckeditor/ckeditor5-paragraph": "^31.0.0",
+        "axios": "^0.24.0",
+        "bootstrap": "^4.0.0",
+        "cross-env": "^7.0",
+        "jquery": "^3.2",
+        "laravel-mix": "^6.0.39",
+        "lodash": "^4.17.19",
+        "popper.js": "^1.12",
+        "resolve-url-loader": "^3.1.0",
+        "sass": "^1.15.2",
+        "sass-loader": "^8.0.0",
+        "vue-template-compiler": "^2.6.12"
+    },
+    "dependencies": {
+        "@ckeditor/ckeditor5-build-classic": "^31.0.0",
+        "@wiris/mathtype-ckeditor5": "^7.27.2",
+        "jquery": "^3.5.1"
+    }
+}

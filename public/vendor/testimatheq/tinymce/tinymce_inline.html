@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="description" content="iMathEQ Math Equation Editor with TinyMCE inline editor.">
+	<meta name="keywords" content="imatheq, math, maths, equation, TinyMCE, editor, wysiwyg, inline">
+	<meta name="imatheq-samples" content="iMathEQ TinyMCE Inline Editing">
+	<title>iMathEQ TinyMCE Plugin » Inline Editor Sample</title>
+	<script src="tinymce_5.7.1/tinymce.min.js"></script>
+
+	<style data-sample="2">
+		.ime-tm-header {
+			position: relative;
+			height: 130px;
+			background: #6D3353;
+		}
+		.ime-tm-title {
+			position: absolute;
+			top: 50px;
+			margin: 0;
+			padding-left: 65px;
+			font-weight: 400;
+			color: white;
+			line-height: 50px;
+		}
+		body, html {
+			margin: 0;
+			padding: 0;
+			font: 16px/24px Arial,Helvetica,sans-serif;
+			color: #000;
+		}
+		.ime-tm-top-navigation {
+			height: 26px;
+			background: #fafafa;
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			padding: 0 40px;
+		}
+		.ime-tm-contents {
+			font-size: 14px;
+			font-size: .875rem;
+			line-height: 24px;
+			line-height: 1.5rem;
+			overflow: hidden;
+			display: table-cell;
+			padding: 0 2.4em 1.2em;
+		}
+		.ime-tm-contents input, .ime-tm-contents select, .ime-tm-contents textarea:not(.cke_source), .ime-tm-contents button {
+			font: inherit;
+			color: inherit;
+		}
+		.ime-tm-contents h2 {
+			font-size: 24px;
+			/* font-size: 1.5rem; */
+			line-height: 48px;
+			/* line-height: 3rem; */
+			font-weight: normal;
+		}
+		.ime-tm-contents h1,.ime-tm-contents h2,.ime-tm-contents h3 {
+			font-family: "Maven Pro";
+			color: #000;
+			margin-top: .9em;
+			margin-bottom: .3em
+		}
+		.ime-tm-contents h1 {
+			font-size: 27px;
+			font-size: 1.6875rem;
+			line-height: 48px;
+			line-height: 3rem;
+			font-weight: normal
+		}
+
+		@font-face {
+			font-family: 'arial-black';
+			src: local('Arial Black');
+		}
+
+		#header {
+			overflow: hidden;
+			padding: 0 0 30px;
+			//border-bottom: 5px solid #05B2D2;
+			position: relative;
+			color: #333;
+			background-color: #f9f9f9;
+		}
+
+
+	</style>
+	<link rel="icon" href="../theme/img/favicon.ico">
+	<script>
+		if ( location.hostname == 'www.imatheq.com' ) {
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-81271057-1', 'auto');
+		  ga('send', 'pageview');
+		}
+	</script>
+</head>
+<body>
+	<header class="ime-tm-header">
+		<h1 class="ime-tm-title">
+			iMathEQ TinyMCE Plugin - inline sample
+		</h1>
+		<nav class="ime-tm-top-navigation">
+			<ul>
+				<li>&nbsp;</li>
+			</ul>
+		</nav>
+	</header>
+	<section class="ime-tm-container">
+	<section class="ime-tm-contents">
+		<div data-sample="1" id="introduction">
+			<h1 class="editor-title">Inline Editor </h1>
+			<p class="edit_element">
+				<strong>iMathEQ Math Equation Editor</strong> works well with TinyMCE Inline Editor. 
+				<strong>Inline Editing</strong> allows you to edit any element on the page in-place. 
+				Inline editor provides a real <abbr title="What You See is What You Get">WYSIWYG</abbr> 
+				experience "out of the box", because unlike in <a href="./classic.html">classic editor</a>, 
+				there is no <code>&lt;iframe&gt;</code> element surrounding the editing area. 
+				The CSS styles used for editor content are exactly the same as on the target page 
+				where this content is rendered!
+			</p>
+		</div>
+	</section>
+</section>
+
+<script>
+	(function() {
+		var titleConfig = {
+			selector: '.editor-title',
+			inline: true,
+			plugins: ['lists', 'powerpaste', 'autolink', 'imatheq'],
+			toolbar: 'undo redo | bold italic underline | imatheq',
+			menubar   : false,
+			statusbar : false,
+			paste_data_images: true,
+			valid_elements: 'strong,em,span[style],a[href]',
+			extended_valid_elements : "img[style|class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|imatheq-mml]"
+		};
+		var contentConfig = {
+			selector: '.edit_element',
+			inline: true,
+			plugins: [
+				'imatheq advlist autolink lists link image charmap print preview anchor textcolor',
+				'searchreplace visualblocks code fullscreen',
+				'insertdatetime media table contextmenu paste code help'
+			],
+			menubar   : false,
+			statusbar : false,
+			toolbar: 'insert | undo redo |  formatselect | bold italic backcolor  | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help | imatheq',
+			content_css: [
+				'//fonts.googleapis.com/css?family=Lato:300,300i,400,400i',
+				'//www.tinymce.com/css/codepen.min.css'],
+			paste_data_images: true,
+			valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
+			extended_valid_elements : "img[style|class|src|border=0|alt|title|hspace|vspace|width|height|align|onmouseover|onmouseout|name|imatheq-mml]"
+		};
+		tinymce.init(titleConfig);
+		tinymce.init(contentConfig);
+	}
+	)();
+</script>
+</html>
