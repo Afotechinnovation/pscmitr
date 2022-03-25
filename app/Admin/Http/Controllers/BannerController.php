@@ -99,7 +99,6 @@ class BannerController extends Controller
     public function store(Request $request)
     {
 
-//        return $request->all();
         $this->authorize('create', Banner::class);
 
         $this->validate($request,[
